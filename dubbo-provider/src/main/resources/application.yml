@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: dubbo-provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/my_dubbo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&&useAffectedRows=true
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+
+server:
+  port: 7080
+
+dubbo:
+  application:
+    name: dubbo-provider
+  protocol:
+    name: dubbo
+    port: 20880
+  registry:
+    address: zookeeper://localhost:2181
+  provider:
+    timeout: 1000
